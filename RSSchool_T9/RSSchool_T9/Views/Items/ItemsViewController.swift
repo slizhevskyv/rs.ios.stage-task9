@@ -44,7 +44,7 @@ class ItemsViewController: UIViewController {
 	
 	private func setupTabBar() {
 		self.tabBarItem = UITabBarItem(title: "Items",
-										image: UIImage.init(systemName: "square.grid.2x2"),
+										image: UIImage(systemName: "square.grid.2x2"),
 										selectedImage: nil);
 	}
 	
@@ -66,15 +66,14 @@ class ItemsViewController: UIViewController {
 			
 			for idxInRow in 0..<self.itemsInRow where rowIdx * self.itemsInRow + idxInRow < FillingData.data.count {
 				let idx = rowIdx * self.itemsInRow + idxInRow;
-				let tileView = ItemPreviewTile(withContent: FillingData.data[idx]);
+				let tileView = ItemTile(withContent: FillingData.data[idx]);
 				row.addArrangedSubview(tileView);
 
 				tileView.translatesAutoresizingMaskIntoConstraints = false;
 				NSLayoutConstraint.activate([
-					tileView.widthAnchor.constraint(greaterThanOrEqualToConstant: 1),
 					tileView.heightAnchor.constraint(equalTo: tileView.widthAnchor, multiplier: 220.0/179.0),
 				]);
-				tileView.addTarget(self, action: #selector(tileHandler(_:)), for: .touchUpInside);3
+				tileView.addTarget(self, action: #selector(tileHandler(_:)), for: .touchUpInside);
 			}
 			
 			container.addArrangedSubview(row);
@@ -101,9 +100,11 @@ class ItemsViewController: UIViewController {
 		
 	}
 	
-	@objc
-	private func tileHandler(_ sender:ItemPreviewTile) {
+	@objc private func tileHandler(_ sender:ItemTile) {
+		let itemDetailVC = ItemDetailsViewController(withContent: sender.content);
+		itemDetailVC.modalPresentationStyle = .fullScreen;
 		
+		self.navigationController?.present(itemDetailVC, animated: true, completion: nil);
 	}
 }
 
