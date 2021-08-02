@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2BB9E75C26AB605700112651 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB9E75B26AB605700112651 /* AppDelegate.swift */; };
 		2BB9E75E26AB605700112651 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB9E75D26AB605700112651 /* SceneDelegate.swift */; };
-		2BB9E76326AB605700112651 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BB9E76126AB605700112651 /* Main.storyboard */; };
 		2BB9E76526AB605900112651 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BB9E76426AB605900112651 /* Assets.xcassets */; };
 		2BB9E76826AB605900112651 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BB9E76626AB605900112651 /* LaunchScreen.storyboard */; };
 		2BB9F29126ADFAF100F43852 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB9F29026ADFAF100F43852 /* Data.swift */; };
@@ -25,13 +24,26 @@
 		2BB9F30E26AF5FA900F43852 /* story-4-path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB9F30D26AF5FA900F43852 /* story-4-path.swift */; };
 		2BB9F31026AF5FB300F43852 /* s4-text.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2BB9F30F26AF5FB300F43852 /* s4-text.txt */; };
 		2BB9F31226AF5FBE00F43852 /* s4-title.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2BB9F31126AF5FBE00F43852 /* s4-title.txt */; };
+		E94CACE026B5DF6B00611098 /* SettingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E94CACDF26B5DF6B00611098 /* SettingItem.m */; };
+		E94CACE326B5E0FA00611098 /* BaseSettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E94CACE226B5E0FA00611098 /* BaseSettingTableViewCell.m */; };
+		E964190A26B6B6C60069E770 /* ControlSettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E964190926B6B6C60069E770 /* ControlSettingTableViewCell.m */; };
+		E964190D26B6B6D90069E770 /* SubtitleSettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E964190C26B6B6D90069E770 /* SubtitleSettingTableViewCell.m */; };
+		E964191226B6DE800069E770 /* ItemPreviewTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E964191126B6DE800069E770 /* ItemPreviewTile.swift */; };
+		E9CF00B426B6930C00097D07 /* UIColor+HexFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CF00B326B6930C00097D07 /* UIColor+HexFormat.m */; };
+		E9CF00B826B6A2AB00097D07 /* StrokeColorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CF00B726B6A2AB00097D07 /* StrokeColorsViewController.m */; };
+		E9CF00BC26B6A59E00097D07 /* StrokeColorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CF00BB26B6A59E00097D07 /* StrokeColorTableViewCell.m */; };
+		E9D2A06C26B3EDAD00859DC8 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D2A06B26B3EDAD00859DC8 /* ItemsViewController.swift */; };
+		E9D2A07426B3F37900859DC8 /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E9D2A07026B3F37900859DC8 /* SF-Pro-Display-Regular.otf */; };
+		E9D2A07526B3F37900859DC8 /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = E9D2A07126B3F37900859DC8 /* SF-Pro-Display-Medium.otf */; };
+		E9D2A07626B3F37900859DC8 /* Rockwell.ttc in Resources */ = {isa = PBXBuildFile; fileRef = E9D2A07226B3F37900859DC8 /* Rockwell.ttc */; };
+		E9D2A07726B3F37900859DC8 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E9D2A07326B3F37900859DC8 /* SF-Pro-Display-Semibold.otf */; };
+		E9D2A07B26B3FF2900859DC8 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D2A07A26B3FF2900859DC8 /* SettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2BB9E75826AB605700112651 /* RSSchool_T9.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSchool_T9.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BB9E75B26AB605700112651 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BB9E75D26AB605700112651 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2BB9E76226AB605700112651 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2BB9E76426AB605900112651 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BB9E76726AB605900112651 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2BB9E76926AB605900112651 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -48,6 +60,29 @@
 		2BB9F30D26AF5FA900F43852 /* story-4-path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "story-4-path.swift"; sourceTree = "<group>"; };
 		2BB9F30F26AF5FB300F43852 /* s4-text.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "s4-text.txt"; sourceTree = "<group>"; };
 		2BB9F31126AF5FBE00F43852 /* s4-title.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "s4-title.txt"; sourceTree = "<group>"; };
+		E94CACDE26B5DF6B00611098 /* SettingItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingItem.h; sourceTree = "<group>"; };
+		E94CACDF26B5DF6B00611098 /* SettingItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingItem.m; sourceTree = "<group>"; };
+		E94CACE126B5E0FA00611098 /* BaseSettingTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseSettingTableViewCell.h; sourceTree = "<group>"; };
+		E94CACE226B5E0FA00611098 /* BaseSettingTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseSettingTableViewCell.m; sourceTree = "<group>"; };
+		E964190826B6B6C60069E770 /* ControlSettingTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControlSettingTableViewCell.h; sourceTree = "<group>"; };
+		E964190926B6B6C60069E770 /* ControlSettingTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ControlSettingTableViewCell.m; sourceTree = "<group>"; };
+		E964190B26B6B6D90069E770 /* SubtitleSettingTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubtitleSettingTableViewCell.h; sourceTree = "<group>"; };
+		E964190C26B6B6D90069E770 /* SubtitleSettingTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubtitleSettingTableViewCell.m; sourceTree = "<group>"; };
+		E964191126B6DE800069E770 /* ItemPreviewTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPreviewTile.swift; sourceTree = "<group>"; };
+		E9CF00B226B6930C00097D07 /* UIColor+HexFormat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexFormat.h"; sourceTree = "<group>"; };
+		E9CF00B326B6930C00097D07 /* UIColor+HexFormat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexFormat.m"; sourceTree = "<group>"; };
+		E9CF00B626B6A2AB00097D07 /* StrokeColorsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StrokeColorsViewController.h; sourceTree = "<group>"; };
+		E9CF00B726B6A2AB00097D07 /* StrokeColorsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StrokeColorsViewController.m; sourceTree = "<group>"; };
+		E9CF00BA26B6A59E00097D07 /* StrokeColorTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StrokeColorTableViewCell.h; sourceTree = "<group>"; };
+		E9CF00BB26B6A59E00097D07 /* StrokeColorTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StrokeColorTableViewCell.m; sourceTree = "<group>"; };
+		E9D2A06B26B3EDAD00859DC8 /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
+		E9D2A07026B3F37900859DC8 /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
+		E9D2A07126B3F37900859DC8 /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
+		E9D2A07226B3F37900859DC8 /* Rockwell.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Rockwell.ttc; sourceTree = "<group>"; };
+		E9D2A07326B3F37900859DC8 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
+		E9D2A07826B3FF2900859DC8 /* RSSchool_T9-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RSSchool_T9-Bridging-Header.h"; sourceTree = "<group>"; };
+		E9D2A07926B3FF2900859DC8 /* SettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		E9D2A07A26B3FF2900859DC8 /* SettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,13 +115,17 @@
 		2BB9E75A26AB605700112651 /* RSSchool_T9 */ = {
 			isa = PBXGroup;
 			children = (
+				E964190F26B6DE3C0069E770 /* Components */,
+				E9CF00B126B692EB00097D07 /* Categories */,
+				E94CACDC26B5DF4E00611098 /* Models */,
+				E9D2A06826B3ED7400859DC8 /* Views */,
+				E9D2A06F26B3F30700859DC8 /* Resources */,
+				E95AC88426B33A9400831B9B /* App */,
 				2BB9F28F26ADFAEB00F43852 /* Data */,
-				2BB9E75B26AB605700112651 /* AppDelegate.swift */,
-				2BB9E75D26AB605700112651 /* SceneDelegate.swift */,
-				2BB9E76126AB605700112651 /* Main.storyboard */,
 				2BB9E76426AB605900112651 /* Assets.xcassets */,
 				2BB9E76626AB605900112651 /* LaunchScreen.storyboard */,
 				2BB9E76926AB605900112651 /* Info.plist */,
+				E9D2A07826B3FF2900859DC8 /* RSSchool_T9-Bridging-Header.h */,
 			);
 			path = RSSchool_T9;
 			sourceTree = "<group>";
@@ -151,6 +190,152 @@
 			path = "story-4";
 			sourceTree = "<group>";
 		};
+		E94CACCF26B598AC00611098 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E964190726B6B69A0069E770 /* SubtitleSettingTableViewCell */,
+				E964190626B6B5B40069E770 /* ControlSettingTableViewCell */,
+				E94CACD326B5992000611098 /* BaseSettingTableViewCell */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		E94CACD326B5992000611098 /* BaseSettingTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E94CACE126B5E0FA00611098 /* BaseSettingTableViewCell.h */,
+				E94CACE226B5E0FA00611098 /* BaseSettingTableViewCell.m */,
+			);
+			path = BaseSettingTableViewCell;
+			sourceTree = "<group>";
+		};
+		E94CACDC26B5DF4E00611098 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E94CACDD26B5DF5300611098 /* Settings */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E94CACDD26B5DF5300611098 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				E94CACDE26B5DF6B00611098 /* SettingItem.h */,
+				E94CACDF26B5DF6B00611098 /* SettingItem.m */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		E95AC88426B33A9400831B9B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				2BB9E75B26AB605700112651 /* AppDelegate.swift */,
+				2BB9E75D26AB605700112651 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		E964190626B6B5B40069E770 /* ControlSettingTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E964190826B6B6C60069E770 /* ControlSettingTableViewCell.h */,
+				E964190926B6B6C60069E770 /* ControlSettingTableViewCell.m */,
+			);
+			path = ControlSettingTableViewCell;
+			sourceTree = "<group>";
+		};
+		E964190726B6B69A0069E770 /* SubtitleSettingTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E964190B26B6B6D90069E770 /* SubtitleSettingTableViewCell.h */,
+				E964190C26B6B6D90069E770 /* SubtitleSettingTableViewCell.m */,
+			);
+			path = SubtitleSettingTableViewCell;
+			sourceTree = "<group>";
+		};
+		E964190F26B6DE3C0069E770 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E964191026B6DE440069E770 /* ItemPreviewTile */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		E964191026B6DE440069E770 /* ItemPreviewTile */ = {
+			isa = PBXGroup;
+			children = (
+				E964191126B6DE800069E770 /* ItemPreviewTile.swift */,
+			);
+			path = ItemPreviewTile;
+			sourceTree = "<group>";
+		};
+		E9CF00B126B692EB00097D07 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				E9CF00B226B6930C00097D07 /* UIColor+HexFormat.h */,
+				E9CF00B326B6930C00097D07 /* UIColor+HexFormat.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		E9CF00B526B6A28100097D07 /* StrokeColors */ = {
+			isa = PBXGroup;
+			children = (
+				E9CF00B926B6A58700097D07 /* Components */,
+				E9CF00B626B6A2AB00097D07 /* StrokeColorsViewController.h */,
+				E9CF00B726B6A2AB00097D07 /* StrokeColorsViewController.m */,
+			);
+			path = StrokeColors;
+			sourceTree = "<group>";
+		};
+		E9CF00B926B6A58700097D07 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E9CF00BA26B6A59E00097D07 /* StrokeColorTableViewCell.h */,
+				E9CF00BB26B6A59E00097D07 /* StrokeColorTableViewCell.m */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		E9D2A06826B3ED7400859DC8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E9CF00B526B6A28100097D07 /* StrokeColors */,
+				E9D2A06A26B3ED8600859DC8 /* Settings */,
+				E9D2A06926B3ED8100859DC8 /* Items */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E9D2A06926B3ED8100859DC8 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				E9D2A06B26B3EDAD00859DC8 /* ItemsViewController.swift */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
+		E9D2A06A26B3ED8600859DC8 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				E94CACCF26B598AC00611098 /* Components */,
+				E9D2A07926B3FF2900859DC8 /* SettingsViewController.h */,
+				E9D2A07A26B3FF2900859DC8 /* SettingsViewController.m */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		E9D2A06F26B3F30700859DC8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E9D2A07226B3F37900859DC8 /* Rockwell.ttc */,
+				E9D2A07126B3F37900859DC8 /* SF-Pro-Display-Medium.otf */,
+				E9D2A07026B3F37900859DC8 /* SF-Pro-Display-Regular.otf */,
+				E9D2A07326B3F37900859DC8 /* SF-Pro-Display-Semibold.otf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -211,16 +396,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9D2A07526B3F37900859DC8 /* SF-Pro-Display-Medium.otf in Resources */,
 				2BB9E76826AB605900112651 /* LaunchScreen.storyboard in Resources */,
+				E9D2A07426B3F37900859DC8 /* SF-Pro-Display-Regular.otf in Resources */,
 				2BB9F30726AF5D9D00F43852 /* s3-text.txt in Resources */,
 				2BB9F30926AF5DAF00F43852 /* s3-title.txt in Resources */,
 				2BB9F31226AF5FBE00F43852 /* s4-title.txt in Resources */,
 				2BB9F29526AE01A300F43852 /* s1-title.txt in Resources */,
 				2BB9F31026AF5FB300F43852 /* s4-text.txt in Resources */,
 				2BB9F2FE26AF556600F43852 /* s2-title.txt in Resources */,
+				E9D2A07626B3F37900859DC8 /* Rockwell.ttc in Resources */,
+				E9D2A07726B3F37900859DC8 /* SF-Pro-Display-Semibold.otf in Resources */,
 				2BB9E76526AB605900112651 /* Assets.xcassets in Resources */,
 				2BB9F30226AF57B500F43852 /* s2-text.txt in Resources */,
-				2BB9E76326AB605700112651 /* Main.storyboard in Resources */,
 				2BB9F29726AE01B800F43852 /* s1-text.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -233,11 +421,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BB9F30126AF557E00F43852 /* story-2-path.swift in Sources */,
+				E9CF00B826B6A2AB00097D07 /* StrokeColorsViewController.m in Sources */,
+				E94CACE326B5E0FA00611098 /* BaseSettingTableViewCell.m in Sources */,
+				E964190A26B6B6C60069E770 /* ControlSettingTableViewCell.m in Sources */,
 				2BB9E75C26AB605700112651 /* AppDelegate.swift in Sources */,
 				2BB9F30B26AF5EEC00F43852 /* story-3-path.swift in Sources */,
+				E964190D26B6B6D90069E770 /* SubtitleSettingTableViewCell.m in Sources */,
+				E9D2A07B26B3FF2900859DC8 /* SettingsViewController.m in Sources */,
 				2BB9F29126ADFAF100F43852 /* Data.swift in Sources */,
+				E9CF00BC26B6A59E00097D07 /* StrokeColorTableViewCell.m in Sources */,
+				E94CACE026B5DF6B00611098 /* SettingItem.m in Sources */,
+				E9D2A06C26B3EDAD00859DC8 /* ItemsViewController.swift in Sources */,
+				E9CF00B426B6930C00097D07 /* UIColor+HexFormat.m in Sources */,
 				2BB9F2EC26AF1F6200F43852 /* story-1-path.swift in Sources */,
 				2BB9F30E26AF5FA900F43852 /* story-4-path.swift in Sources */,
+				E964191226B6DE800069E770 /* ItemPreviewTile.swift in Sources */,
 				2BB9E75E26AB605700112651 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,14 +443,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2BB9E76126AB605700112651 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2BB9E76226AB605700112651 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2BB9E76626AB605900112651 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -387,6 +577,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BSCCGM92FS;
 				INFOPLIST_FILE = RSSchool_T9/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -395,6 +586,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.username.RSSchool-T9";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RSSchool_T9/RSSchool_T9-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -408,6 +600,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BSCCGM92FS;
 				INFOPLIST_FILE = RSSchool_T9/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -416,6 +609,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.username.RSSchool-T9";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RSSchool_T9/RSSchool_T9-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
