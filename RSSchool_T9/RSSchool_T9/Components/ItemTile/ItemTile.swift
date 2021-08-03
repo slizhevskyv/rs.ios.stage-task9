@@ -29,7 +29,7 @@ class ItemTile: UIControl {
 		self.layer.cornerRadius = 18;
 		self.layer.borderWidth = 1;
 		
-		let contentData = Constants.getContentData(byContent: content);
+		let contentData = ContentData.getData(byContent: content);
 		let coverImageView = CoverImageView(image: contentData.coverImage);
 		coverImageView.titleLabel.text = contentData.title;
 		coverImageView.subtitleLabel.text = contentData.type.rawValue;

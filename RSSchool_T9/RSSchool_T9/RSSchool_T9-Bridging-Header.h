@@ -3,3 +3,4 @@
 //
 
 #import "SettingsViewController.h"
+#import "UIColor+HexFormat.h"

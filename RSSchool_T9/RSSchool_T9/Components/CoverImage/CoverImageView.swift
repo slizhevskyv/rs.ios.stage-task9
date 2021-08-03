@@ -24,17 +24,19 @@ class CoverImageView: UIImageView {
 	}();
 	
 	lazy private(set) var titleLabel:UILabel = {
-		let title = UILabel();
+		let title = PaddingLabel();
 		title.font = UIFont(name: "Rockwell-Regular", size: 16)
 		title.textColor = .white;
+		title.paddingTop = 5;
 
 		return title;
 	}()
 	
 	lazy private(set) var subtitleLabel:UILabel = {
-		let subtitle = UILabel();
+		let subtitle = PaddingLabel();
 		subtitle.font = UIFont(name: "Rockwell-Regular", size: 12);
 		subtitle.textColor = UIColor(named: "PreviewTileSubtitleColor")
+		subtitle.paddingTop = 2;
 		
 		return subtitle;
 	}()
@@ -83,12 +85,6 @@ class CoverImageView: UIImageView {
 		super.layoutSubviews();
 		
 		self.gradientLayer.frame = self.bounds;
-		
-		let titleLabelNewFrame = CGRect(x: self.titleLabel.frame.origin.x, y: self.titleLabel.frame.origin.y, width: self.titleLabel.frame.size.width, height: self.titleLabel.frame.size.height + 5);
-		self.titleLabel.frame = titleLabelNewFrame;
-		
-		let subtitleLabelNewFrame = CGRect(x: self.subtitleLabel.frame.origin.x, y: self.subtitleLabel.frame.origin.y, width: self.subtitleLabel.frame.size.width, height: self.subtitleLabel.frame.size.height + 5);
-		self.subtitleLabel.frame = subtitleLabelNewFrame;
 	}
 	
 }

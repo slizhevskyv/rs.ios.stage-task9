@@ -38,8 +38,7 @@ class ItemsViewController: UIViewController {
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated);
 		
-		print(self.settingsVC.drawStories);
-		print(self.settingsVC.strokeColor);
+		
 	}
 	
 	private func setupTabBar() {
@@ -101,7 +100,9 @@ class ItemsViewController: UIViewController {
 	}
 	
 	@objc private func tileHandler(_ sender:ItemTile) {
-		let itemDetailVC = ItemDetailsViewController(withContent: sender.content);
+		let itemDetailVC = ItemDetailsViewController(withContent: sender.content,
+													 drawStories: self.settingsVC.drawStories,
+													 strokeColor: UIColor(fromHexFormat: self.settingsVC.strokeColor as String));
 		itemDetailVC.modalPresentationStyle = .fullScreen;
 		
 		self.navigationController?.present(itemDetailVC, animated: true, completion: nil);

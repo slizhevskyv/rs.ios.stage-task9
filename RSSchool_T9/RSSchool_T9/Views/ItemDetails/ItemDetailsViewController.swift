@@ -48,10 +48,57 @@ class ItemDetailsViewController: UIViewController {
 		return label;
 	}()
 	
-	private let content: ContentType;
+	lazy private var separator:UIView = {
+		let separator = UIView();
+		separator.layer.borderWidth = 1;
+		separator.layer.borderColor = UIColor.white.cgColor;
+		
+		separator.translatesAutoresizingMaskIntoConstraints = false;
+		return separator;
+	}()
 	
-	init(withContent content:ContentType) {
+	lazy private var detailsContainer:UIStackView = {
+		let container = UIStackView();
+		container.axis = .vertical;
+		
+		container.translatesAutoresizingMaskIntoConstraints = false;
+		return container;
+	}()
+	
+	lazy private var drawScrollViewContainer:UIScrollView = {
+		let drawContainer = UIScrollView();
+		
+		drawContainer.translatesAutoresizingMaskIntoConstraints = false;
+		return drawContainer;
+	}()
+	
+	lazy private var storyDetailsLabel:UILabel = {
+		let storyDetailsLabel = PaddingLabel();
+		
+		storyDetailsLabel.layer.borderWidth = 1;
+		storyDetailsLabel.layer.borderColor = UIColor.white.cgColor;
+		storyDetailsLabel.layer.cornerRadius = 8;
+		storyDetailsLabel.font = UIFont(name: "Rockwell-Regular", size: 24);
+		storyDetailsLabel.textColor = .white;
+		storyDetailsLabel.paddingTop = 30;
+		storyDetailsLabel.paddingLeft = 30;
+		storyDetailsLabel.paddingRight = 30;
+		storyDetailsLabel.paddingBottom = 30;
+		storyDetailsLabel.numberOfLines = 0;
+		storyDetailsLabel.lineBreakMode = .byWordWrapping;
+		
+		storyDetailsLabel.translatesAutoresizingMaskIntoConstraints = false;
+		return storyDetailsLabel;
+	}()
+	
+	private let content: ContentType;
+	var drawStories: Bool;
+	var strokeColor: UIColor;
+	
+	init(withContent content:ContentType, drawStories: Bool, strokeColor: UIColor) {
 		self.content = content;
+		self.drawStories = drawStories;
+		self.strokeColor = strokeColor;
 		
 		super.init(nibName: nil, bundle: nil)
 		
@@ -69,7 +116,7 @@ class ItemDetailsViewController: UIViewController {
     }
 	
 	private func setupLayout() {
-		let contentData = Constants.getContentData(byContent: self.content);
+		let contentData = ContentData.getData(byContent: content);
 		
 		self.view.addSubview(self.scrollView)
 		
@@ -82,12 +129,14 @@ class ItemDetailsViewController: UIViewController {
 
 		self.setupCloseButton();
 		self.setupCoverImage(withData: contentData);
-		
+		self.setupSeparator();
+		self.setupDetailsView(withData: contentData);
 	}
 	
-	private func setupCoverImage(withData data:Constants.ContentData) {
+	private func setupCoverImage(withData data:ContentData) {
 		let container = UIView();
 		let coverImage = CoverImageView(image: data.coverImage);
+		coverImage.layer.cornerRadius = 8;
 		coverImage.layer.borderColor = UIColor.white.cgColor;
 		coverImage.titleLabel.text = data.title.trimmingCharacters(in: .whitespacesAndNewlines);
 		coverImage.titleLabel.font = UIFont(name: "Rockwell-Regular", size: 48);
@@ -107,7 +156,6 @@ class ItemDetailsViewController: UIViewController {
 			container.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
 			container.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
 			container.heightAnchor.constraint(equalTo: coverImage.heightAnchor),
-			container.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor, constant: -100),
 			// Title Label Constraints
 			coverImage.titleLabel.leadingAnchor.constraint(equalTo: coverImage.leadingAnchor, constant: 30),
 			coverImage.titleLabel.bottomAnchor.constraint(equalTo: coverImage.bottomAnchor, constant: -55),
@@ -116,8 +164,9 @@ class ItemDetailsViewController: UIViewController {
 			coverImage.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -20),
 			coverImage.heightAnchor.constraint(equalTo: coverImage.widthAnchor, multiplier: 500.0/374.0),
 			// Item Type Label Constraints
+			self.itemTypeLabel.heightAnchor.constraint(equalToConstant: 40),
 			self.itemTypeLabel.centerXAnchor.constraint(equalTo: container.centerXAnchor),
-			self.itemTypeLabel.bottomAnchor.constraint(equalTo: container.bottomAnchor),
+			self.itemTypeLabel.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: 20),
 		]);
 	}
 	
@@ -128,23 +177,106 @@ class ItemDetailsViewController: UIViewController {
 		
 		NSLayoutConstraint.activate([
 			self.closeButton.topAnchor.constraint(equalTo: self.scrollView.topAnchor, constant: 30),
-			self.closeButton.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -30),
+			self.closeButton.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
 			self.closeButton.widthAnchor.constraint(equalToConstant: 40),
 			self.closeButton.heightAnchor.constraint(equalToConstant: 40)
 		]);
 	}
 	
+	private func setupSeparator() {
+		self.scrollView.addSubview(self.separator);
+
+		NSLayoutConstraint.activate([
+			self.separator.topAnchor.constraint(equalTo: self.itemTypeLabel.bottomAnchor, constant: 40),
+			self.separator.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 100),
+			self.separator.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -100),
+			self.separator.heightAnchor.constraint(equalToConstant: 1),
+		]);
+	}
+	
+	private func setupDetailsView(withData data:ContentData) {
+		self.scrollView.addSubview(self.detailsContainer);
+		
+		if data.type == .Story {
+			self.setupStoryDetails(withData: data);
+		}
+		
+		self.setupGalleryDetails(withData: data);
+		
+		NSLayoutConstraint.activate([
+			detailsContainer.topAnchor.constraint(equalTo: self.separator.bottomAnchor, constant: 40),
+			detailsContainer.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+			detailsContainer.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+			detailsContainer.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor, constant: -30),
+		]);
+	}
+	
+	private func setupStoryDetails(withData data:ContentData) {
+		self.storyDetailsLabel.text = data.text?.trimmingCharacters(in: .whitespacesAndNewlines);
+		self.detailsContainer.spacing = 40;
+		
+		if let paths = data.paths {
+			let pathsContainer = UIStackView()
+			pathsContainer.spacing = 110;
+			pathsContainer.distribution = .equalCentering;
+			pathsContainer.isLayoutMarginsRelativeArrangement = true;
+			pathsContainer.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0, leading: 50, bottom: 0, trailing: 20);
+			
+			paths.forEach { path in
+				let canvas = Canvas(withPath: path, color: self.strokeColor, andDrawTime: self.drawStories ? CGFloat(3) : 0);
+				
+				pathsContainer.addArrangedSubview(canvas);
+			}
+			
+			self.drawScrollViewContainer.addSubview(pathsContainer);
+			pathsContainer.translatesAutoresizingMaskIntoConstraints = false;
+			
+			let widthConstraint = pathsContainer.widthAnchor.constraint(equalTo: self.drawScrollViewContainer.widthAnchor);
+			widthConstraint.priority = .defaultLow;
+			
+			NSLayoutConstraint.activate([
+				pathsContainer.leadingAnchor.constraint(equalTo: self.drawScrollViewContainer.leadingAnchor),
+				pathsContainer.trailingAnchor.constraint(equalTo: self.drawScrollViewContainer.trailingAnchor),
+				widthConstraint,
+			]);
+		}
+		
+		
+		self.detailsContainer.addArrangedSubview(self.drawScrollViewContainer);
+		self.detailsContainer.addArrangedSubview(self.storyDetailsLabel);
+		
+		NSLayoutConstraint.activate([
+			self.drawScrollViewContainer.heightAnchor.constraint(equalToConstant: 100),
+		]);
+	}
+	
+	private func setupGalleryDetails(withData data:ContentData) {
+		self.detailsContainer.spacing = 20;
+		
+		data.images?.forEach({ image in
+			let clickableImageView = ClickableImage(withImage: image);
+			
+			self.detailsContainer.addArrangedSubview(clickableImageView);
+			
+			clickableImageView.addTarget(self, action: #selector(handleGalleryImageTap(sender:)), for: .touchUpInside);
+			
+			clickableImageView.translatesAutoresizingMaskIntoConstraints = false;
+			clickableImageView.heightAnchor.constraint(equalTo: clickableImageView.widthAnchor, multiplier: 491.0/354.0).isActive = true;
+		})
+	}
+	
 	override func viewDidLayoutSubviews() {
 		self.closeButton.layer.cornerRadius = self.closeButton.bounds.width / 2;
-		
-		let newItemTypeLabelFrame = CGRect(x: self.itemTypeLabel.frame.origin.x,
-										   y: self.itemTypeLabel.frame.origin.y + (self.itemTypeLabel.frame.height / 4),
-										   width: self.itemTypeLabel.frame.width,
-										   height: self.itemTypeLabel.frame.height);
-		self.itemTypeLabel.frame = newItemTypeLabelFrame;
 	}
 	
 	@objc private func closeButtonHandler() {
 		self.dismiss(animated: true, completion: nil);
+	}
+	
+	@objc private func handleGalleryImageTap(sender: ClickableImage) {
+		let fullImageVC = FullImageViewController(withImage: sender.image);
+		fullImageVC.modalPresentationStyle = .fullScreen;
+		
+		self.present(fullImageVC, animated: true, completion: nil);
 	}
 }

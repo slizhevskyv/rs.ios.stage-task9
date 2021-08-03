@@ -34,7 +34,7 @@ NSString *const StrokeColorCell = @"StrokeColorCell";
 		[self setupTabBar];
 		[self setupNavigationBar];
 		_drawStories = YES;
-		_strokeColor = [NSMutableString stringWithString:@"#e87aa4"];
+		_strokeColor = [NSMutableString stringWithString:@"#f3af22"];
 		_items = @{
 			StrokeColorCell: [[SettingItem alloc] initWithTitle:@"Stroke color" subtitle:_strokeColor isOn:NO],
 			DrawStoriesCell: [[SettingItem alloc] initWithTitle:@"Draw stories" subtitle:nil isOn:YES],
