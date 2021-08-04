@@ -92,8 +92,8 @@ class ItemDetailsViewController: UIViewController {
 	}()
 	
 	private let content: ContentType;
-	var drawStories: Bool;
-	var strokeColor: UIColor;
+	private let drawStories: Bool;
+	private let strokeColor: UIColor;
 	
 	init(withContent content:ContentType, drawStories: Bool, strokeColor: UIColor) {
 		self.content = content;
@@ -118,6 +118,14 @@ class ItemDetailsViewController: UIViewController {
 	private func setupLayout() {
 		let contentData = ContentData.getData(byContent: content);
 		
+		self.setupScrollView();
+		self.setupCloseButton();
+		self.setupCoverImage(withData: contentData);
+		self.setupSeparator();
+		self.setupDetailsView(withData: contentData);
+	}
+	
+	private func setupScrollView() {
 		self.view.addSubview(self.scrollView)
 		
 		NSLayoutConstraint.activate([
@@ -126,15 +134,10 @@ class ItemDetailsViewController: UIViewController {
 			self.scrollView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
 			self.scrollView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
 		]);
-
-		self.setupCloseButton();
-		self.setupCoverImage(withData: contentData);
-		self.setupSeparator();
-		self.setupDetailsView(withData: contentData);
 	}
 	
 	private func setupCoverImage(withData data:ContentData) {
-		let container = UIView();
+		let coverImageContainer = UIView();
 		let coverImage = CoverImageView(image: data.coverImage);
 		coverImage.layer.cornerRadius = 8;
 		coverImage.layer.borderColor = UIColor.white.cgColor;
@@ -144,29 +147,29 @@ class ItemDetailsViewController: UIViewController {
 		
 		self.itemTypeLabel.text = data.type.rawValue;
 		
-		container.addSubview(coverImage);
-		container.addSubview(self.itemTypeLabel);
+		coverImageContainer.addSubview(coverImage);
+		coverImageContainer.addSubview(self.itemTypeLabel);
 
-		self.scrollView.addSubview(container);
+		self.scrollView.addSubview(coverImageContainer);
 		
-		container.translatesAutoresizingMaskIntoConstraints = false;
+		coverImageContainer.translatesAutoresizingMaskIntoConstraints = false;
 		coverImage.translatesAutoresizingMaskIntoConstraints = false;
 		NSLayoutConstraint.activate([
-			container.topAnchor.constraint(equalTo: self.closeButton.bottomAnchor, constant: 30),
-			container.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
-			container.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
-			container.heightAnchor.constraint(equalTo: coverImage.heightAnchor),
+			coverImageContainer.topAnchor.constraint(equalTo: self.closeButton.bottomAnchor, constant: 30),
+			coverImageContainer.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
+			coverImageContainer.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
+			coverImageContainer.heightAnchor.constraint(equalTo: coverImage.heightAnchor),
 			// Title Label Constraints
 			coverImage.titleLabel.leadingAnchor.constraint(equalTo: coverImage.leadingAnchor, constant: 30),
 			coverImage.titleLabel.bottomAnchor.constraint(equalTo: coverImage.bottomAnchor, constant: -55),
 			// Cover Image Constraints
-			coverImage.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 20),
-			coverImage.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -20),
+			coverImage.leadingAnchor.constraint(equalTo: coverImageContainer.leadingAnchor, constant: 20),
+			coverImage.trailingAnchor.constraint(equalTo: coverImageContainer.trailingAnchor, constant: -20),
 			coverImage.heightAnchor.constraint(equalTo: coverImage.widthAnchor, multiplier: 500.0/374.0),
 			// Item Type Label Constraints
 			self.itemTypeLabel.heightAnchor.constraint(equalToConstant: 40),
-			self.itemTypeLabel.centerXAnchor.constraint(equalTo: container.centerXAnchor),
-			self.itemTypeLabel.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: 20),
+			self.itemTypeLabel.centerXAnchor.constraint(equalTo: coverImageContainer.centerXAnchor),
+			self.itemTypeLabel.bottomAnchor.constraint(equalTo: coverImageContainer.bottomAnchor, constant: 20),
 		]);
 	}
 	
@@ -197,12 +200,13 @@ class ItemDetailsViewController: UIViewController {
 	private func setupDetailsView(withData data:ContentData) {
 		self.scrollView.addSubview(self.detailsContainer);
 		
-		if data.type == .Story {
-			self.setupStoryDetails(withData: data);
+		switch data.type {
+			case .Story:
+				self.setupStoryDetails(withData: data);
+			case .Gallery:
+				self.setupGalleryDetails(withData: data);
 		}
-		
-		self.setupGalleryDetails(withData: data);
-		
+
 		NSLayoutConstraint.activate([
 			detailsContainer.topAnchor.constraint(equalTo: self.separator.bottomAnchor, constant: 40),
 			detailsContainer.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 20),

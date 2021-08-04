@@ -47,15 +47,8 @@ NSString *const StrokeColorCell = @"StrokeColorCell";
     [super viewDidLoad];
     
 	self.view.backgroundColor = [UIColor colorNamed:@"Gray"];
-	self.tabBarController.delegate = self;
 	
 	[self setupTableView];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-	[super viewWillAppear:animated];
-	
-	NSLog(@"Draw stories %d", self.drawStories);
 }
 
 -(void)setupTabBar {

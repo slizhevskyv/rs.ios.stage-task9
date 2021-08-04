@@ -43,8 +43,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 	}
 	
 	private func setupAppearance() {
-		print(UIFont.fontNames(forFamilyName: "Rockwell"));
-		
 		// UITabBar Appearance
 		UITabBar.appearance().tintColor = UIColor.init(named: "Red");
 		UITabBarItem.appearance().setTitleTextAttributes([

@@ -53,9 +53,9 @@ class ItemsViewController: UIViewController {
 	
 	private func setupLayout() {
 		let scrollView = UIScrollView();
-		let container = UIStackView();
-		container.axis = .vertical;
-		container.spacing = 30;
+		let viewContainer = UIStackView();
+		viewContainer.axis = .vertical;
+		viewContainer.spacing = 30;
 		
 		let rowCount = (Float(FillingData.data.count) / Float(self.itemsInRow)).rounded(.up);
 		
@@ -75,28 +75,26 @@ class ItemsViewController: UIViewController {
 				tileView.addTarget(self, action: #selector(tileHandler(_:)), for: .touchUpInside);
 			}
 			
-			container.addArrangedSubview(row);
+			viewContainer.addArrangedSubview(row);
 		}
 		
-		scrollView.addSubview(container);
+		scrollView.addSubview(viewContainer);
 		self.view.addSubview(scrollView);
 		
 		scrollView.translatesAutoresizingMaskIntoConstraints = false;
+		viewContainer.translatesAutoresizingMaskIntoConstraints = false;
 		NSLayoutConstraint.activate([
+			// Scroll View
 			scrollView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
 			scrollView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
 			scrollView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
 			scrollView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
+			// View Container
+			viewContainer.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 40),
+			viewContainer.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+			viewContainer.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+			viewContainer.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -50),
 		]);
-		
-		container.translatesAutoresizingMaskIntoConstraints = false;
-		NSLayoutConstraint.activate([
-			container.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 40),
-			container.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-			container.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
-			container.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -50),
-		]);
-		
 	}
 	
 	@objc private func tileHandler(_ sender:ItemTile) {

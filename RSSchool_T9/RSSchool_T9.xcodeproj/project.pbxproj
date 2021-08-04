@@ -30,6 +30,12 @@
 		E92D072426B9804D00419A27 /* ClickableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92D072326B9804D00419A27 /* ClickableImage.swift */; };
 		E92D072626B9857A00419A27 /* FullImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92D072526B9857A00419A27 /* FullImageViewController.swift */; };
 		E92D072C26B9CBC300419A27 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92D072B26B9CBC300419A27 /* Canvas.swift */; };
+		E939FBB526BA905600C7F70C /* my-story-1-path.swift in Sources */ = {isa = PBXBuildFile; fileRef = E939FBB426BA905600C7F70C /* my-story-1-path.swift */; };
+		E939FBB726BAAE3E00C7F70C /* my-story-1-text.txt in Resources */ = {isa = PBXBuildFile; fileRef = E939FBB626BAAE3E00C7F70C /* my-story-1-text.txt */; };
+		E939FBB926BAAE9700C7F70C /* my-story-1-title.txt in Resources */ = {isa = PBXBuildFile; fileRef = E939FBB826BAAE9700C7F70C /* my-story-1-title.txt */; };
+		E939FBBC26BAB06E00C7F70C /* my-story-2-path.swift in Sources */ = {isa = PBXBuildFile; fileRef = E939FBBB26BAB06E00C7F70C /* my-story-2-path.swift */; };
+		E939FBBE26BAB25700C7F70C /* my-story-2-text.txt in Resources */ = {isa = PBXBuildFile; fileRef = E939FBBD26BAB25700C7F70C /* my-story-2-text.txt */; };
+		E939FBC026BAB26200C7F70C /* my-story-2-title.txt in Resources */ = {isa = PBXBuildFile; fileRef = E939FBBF26BAB26200C7F70C /* my-story-2-title.txt */; };
 		E94CACE026B5DF6B00611098 /* SettingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E94CACDF26B5DF6B00611098 /* SettingItem.m */; };
 		E94CACE326B5E0FA00611098 /* BaseSettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E94CACE226B5E0FA00611098 /* BaseSettingTableViewCell.m */; };
 		E964190A26B6B6C60069E770 /* ControlSettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E964190926B6B6C60069E770 /* ControlSettingTableViewCell.m */; };
@@ -73,6 +79,12 @@
 		E92D072326B9804D00419A27 /* ClickableImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickableImage.swift; sourceTree = "<group>"; };
 		E92D072526B9857A00419A27 /* FullImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullImageViewController.swift; sourceTree = "<group>"; };
 		E92D072B26B9CBC300419A27 /* Canvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
+		E939FBB426BA905600C7F70C /* my-story-1-path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "my-story-1-path.swift"; sourceTree = "<group>"; };
+		E939FBB626BAAE3E00C7F70C /* my-story-1-text.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "my-story-1-text.txt"; sourceTree = "<group>"; };
+		E939FBB826BAAE9700C7F70C /* my-story-1-title.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "my-story-1-title.txt"; sourceTree = "<group>"; };
+		E939FBBB26BAB06E00C7F70C /* my-story-2-path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "my-story-2-path.swift"; sourceTree = "<group>"; };
+		E939FBBD26BAB25700C7F70C /* my-story-2-text.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "my-story-2-text.txt"; sourceTree = "<group>"; };
+		E939FBBF26BAB26200C7F70C /* my-story-2-title.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "my-story-2-title.txt"; sourceTree = "<group>"; };
 		E94CACDE26B5DF6B00611098 /* SettingItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingItem.h; sourceTree = "<group>"; };
 		E94CACDF26B5DF6B00611098 /* SettingItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingItem.m; sourceTree = "<group>"; };
 		E94CACE126B5E0FA00611098 /* BaseSettingTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseSettingTableViewCell.h; sourceTree = "<group>"; };
@@ -156,6 +168,8 @@
 		2BB9F29226AE017D00F43852 /* Static */ = {
 			isa = PBXGroup;
 			children = (
+				E939FBBA26BAB05C00C7F70C /* my-story-2 */,
+				E939FBB326BA903D00C7F70C /* my-story-1 */,
 				2BB9F30C26AF5F9C00F43852 /* story-4 */,
 				2BB9F30326AF5D7E00F43852 /* story-3 */,
 				2BB9F2FC26AF554C00F43852 /* story-2 */,
@@ -236,20 +250,32 @@
 			path = FullImage;
 			sourceTree = "<group>";
 		};
-		E92D072226B9802400419A27 /* ClickableImage */ = {
-			isa = PBXGroup;
-			children = (
-				E92D072326B9804D00419A27 /* ClickableImage.swift */,
-			);
-			path = ClickableImage;
-			sourceTree = "<group>";
-		};
 		E92D072A26B9CB9E00419A27 /* Canvas */ = {
 			isa = PBXGroup;
 			children = (
 				E92D072B26B9CBC300419A27 /* Canvas.swift */,
 			);
 			path = Canvas;
+			sourceTree = "<group>";
+		};
+		E939FBB326BA903D00C7F70C /* my-story-1 */ = {
+			isa = PBXGroup;
+			children = (
+				E939FBB426BA905600C7F70C /* my-story-1-path.swift */,
+				E939FBB626BAAE3E00C7F70C /* my-story-1-text.txt */,
+				E939FBB826BAAE9700C7F70C /* my-story-1-title.txt */,
+			);
+			path = "my-story-1";
+			sourceTree = "<group>";
+		};
+		E939FBBA26BAB05C00C7F70C /* my-story-2 */ = {
+			isa = PBXGroup;
+			children = (
+				E939FBBB26BAB06E00C7F70C /* my-story-2-path.swift */,
+				E939FBBD26BAB25700C7F70C /* my-story-2-text.txt */,
+				E939FBBF26BAB26200C7F70C /* my-story-2-title.txt */,
+			);
+			path = "my-story-2";
 			sourceTree = "<group>";
 		};
 		E94CACD326B5992000611098 /* BaseSettingTableViewCell */ = {
@@ -265,18 +291,18 @@
 			isa = PBXGroup;
 			children = (
 				E92D071D26B9714A00419A27 /* ContentData */,
-				E94CACDD26B5DF5300611098 /* Settings */,
+				E94CACDD26B5DF5300611098 /* SettingItem */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		E94CACDD26B5DF5300611098 /* Settings */ = {
+		E94CACDD26B5DF5300611098 /* SettingItem */ = {
 			isa = PBXGroup;
 			children = (
 				E94CACDE26B5DF6B00611098 /* SettingItem.h */,
 				E94CACDF26B5DF6B00611098 /* SettingItem.m */,
 			);
-			path = Settings;
+			path = SettingItem;
 			sourceTree = "<group>";
 		};
 		E95AC88426B33A9400831B9B /* App */ = {
@@ -350,7 +376,7 @@
 		E972920526B83ACE008D37F4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				E92D072226B9802400419A27 /* ClickableImage */,
+				E92D072326B9804D00419A27 /* ClickableImage.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -476,6 +502,8 @@
 				E9D2A07526B3F37900859DC8 /* SF-Pro-Display-Medium.otf in Resources */,
 				2BB9E76826AB605900112651 /* LaunchScreen.storyboard in Resources */,
 				E9D2A07426B3F37900859DC8 /* SF-Pro-Display-Regular.otf in Resources */,
+				E939FBB926BAAE9700C7F70C /* my-story-1-title.txt in Resources */,
+				E939FBB726BAAE3E00C7F70C /* my-story-1-text.txt in Resources */,
 				2BB9F30726AF5D9D00F43852 /* s3-text.txt in Resources */,
 				2BB9F30926AF5DAF00F43852 /* s3-title.txt in Resources */,
 				2BB9F31226AF5FBE00F43852 /* s4-title.txt in Resources */,
@@ -486,6 +514,8 @@
 				E9D2A07726B3F37900859DC8 /* SF-Pro-Display-Semibold.otf in Resources */,
 				2BB9E76526AB605900112651 /* Assets.xcassets in Resources */,
 				2BB9F30226AF57B500F43852 /* s2-text.txt in Resources */,
+				E939FBBE26BAB25700C7F70C /* my-story-2-text.txt in Resources */,
+				E939FBC026BAB26200C7F70C /* my-story-2-title.txt in Resources */,
 				2BB9F29726AE01B800F43852 /* s1-text.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -502,6 +532,7 @@
 				E94CACE326B5E0FA00611098 /* BaseSettingTableViewCell.m in Sources */,
 				E964190A26B6B6C60069E770 /* ControlSettingTableViewCell.m in Sources */,
 				2BB9E75C26AB605700112651 /* AppDelegate.swift in Sources */,
+				E939FBBC26BAB06E00C7F70C /* my-story-2-path.swift in Sources */,
 				2BB9F30B26AF5EEC00F43852 /* story-3-path.swift in Sources */,
 				E964190D26B6B6D90069E770 /* SubtitleSettingTableViewCell.m in Sources */,
 				E9D2A07B26B3FF2900859DC8 /* SettingsViewController.m in Sources */,
@@ -519,6 +550,7 @@
 				E91CDB6026B8548A006E79EB /* CoverImageView.swift in Sources */,
 				E92D072426B9804D00419A27 /* ClickableImage.swift in Sources */,
 				2BB9F30E26AF5FA900F43852 /* story-4-path.swift in Sources */,
+				E939FBB526BA905600C7F70C /* my-story-1-path.swift in Sources */,
 				E964191226B6DE800069E770 /* ItemTile.swift in Sources */,
 				2BB9E75E26AB605700112651 /* SceneDelegate.swift in Sources */,
 			);

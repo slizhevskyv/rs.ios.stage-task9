@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SettingsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, StrokeColorViewControllerDelegate, UITabBarControllerDelegate>
+@interface SettingsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, StrokeColorViewControllerDelegate>
 
 @property (nonatomic, assign, readonly) BOOL drawStories;
 @property (nonatomic, copy, readonly) NSMutableString *strokeColor;
